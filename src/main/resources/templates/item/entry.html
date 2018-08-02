@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link th:href="@{/main-style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<title>Enter Items</title>
+</head>
+<body>
+<h1>Item Entry</h1>
+<div>
+<form th:action="@{/__${action}__}" th:object="${itemDto}" method="post">
+   <input th:field="*{id}" id="id" type="hidden" th:if="${action}=='item/edit'"/>
+   <div>
+     <label class="active" for="name">Name</label>
+	 <input th:field="*{name}" id="name" type="text"/>
+   </div>
+   <div>
+     <label class="active" for="description">Description</label>
+     <input th:field="*{description}" id="description" type="text"/>
+   </div>
+   <div>
+     <label class="active" for="quantity">Quantity</label>
+     <input th:field="*{quantity}" id="quantity" type="number" min="0"/>
+   </div>
+   <div class="grouping">
+     Warehouse Information
+     <hr>
+   </div>
+   <div>
+     <label class="active" for="warehouseName">Name</label>
+	 <input th:field="*{warehouseName}" id="warehouseName" type="text"/>
+   </div>
+   <div>
+     <label class="active" for="warehouseRowNumber">Row Number</label>
+	 <input th:field="*{warehouseRowNumber}" id="warehouseRowNumber" type="number" min="1"/>
+   </div>
+   <div>
+     <label class="active" for="warehouseBinLabel">Bin</label>
+	 <input th:field="*{warehouseBinLabel}" id="warehouseBinLabel" type="text"/>
+   </div>
+   <div>
+     <button type="submit" name="save">Save</button>
+     <button type="submit" name="cancel" formnovalidate="formnovalidate">Cancel</button>
+   </div>
+</form>
+</div>
+</body>
+</html>
