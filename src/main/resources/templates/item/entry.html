@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Item Entry</h1>
-<div>
+<div class="input-form">
 <form th:action="@{/__${action}__}" th:object="${itemDto}" method="post">
    <input th:field="*{id}" id="id" type="hidden" th:if="${action}=='item/edit'"/>
    <div>
@@ -27,6 +27,7 @@
      <hr>
    </div>
    <div>
+     <input th:field="*{warehouseId}" id="warehouseId" type="hidden" th:if="${action}=='item/edit'"/>
      <label class="active" for="warehouseName">Name</label>
 	 <input th:field="*{warehouseName}" id="warehouseName" type="text"/>
    </div>

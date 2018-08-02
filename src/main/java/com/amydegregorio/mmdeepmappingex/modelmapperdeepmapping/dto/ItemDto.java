@@ -12,6 +12,7 @@ public class ItemDto {
    private String name;
    private String description;
    private Integer quantity;
+   private Long warehouseId;
    private String warehouseName;
    private Integer warehouseRowNumber;
    private String warehouseBinLabel;
@@ -126,6 +127,24 @@ public class ItemDto {
     */
    public void setWarehouseBinLabel(String warehouseBinLabel) {
       this.warehouseBinLabel = warehouseBinLabel;
+   }
+
+   
+   /**
+    * Gets warehouseId.
+    * @return the warehouseId
+    */
+   public Long getWarehouseId() {
+      return warehouseId;
+   }
+
+   
+   /**
+    * Sets warehouseId.
+    * @param warehouseId the warehouseId to set
+    */
+   public void setWarehouseId(Long warehouseId) {
+      this.warehouseId = warehouseId;
    }
 
 }

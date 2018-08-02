@@ -138,6 +138,7 @@ public class ItemController {
     */
    PropertyMap<ItemDto, Item> warehouseMapping = new PropertyMap<ItemDto, Item>() {
       protected void configure() {
+         map().getLocation().setId(source.getWarehouseId());
          map().getLocation().setWarehouseName(source.getWarehouseName());
          map().getLocation().setRowNumber(source.getWarehouseRowNumber());
          map().getLocation().setBinLabel(source.getWarehouseBinLabel());
@@ -150,6 +151,7 @@ public class ItemController {
     */
    PropertyMap<Item, ItemDto> warehouseFieldMapping = new PropertyMap<Item, ItemDto>() {
       protected void configure() {
+         map().setWarehouseId(source.getLocation().getId());
          map().setWarehouseName(source.getLocation().getWarehouseName());
          map().setWarehouseRowNumber(source.getLocation().getRowNumber());
          map().setWarehouseBinLabel(source.getLocation().getBinLabel());

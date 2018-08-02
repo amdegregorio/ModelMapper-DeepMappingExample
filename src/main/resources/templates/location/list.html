@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link th:href="@{/main-style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<title>List Locations</title>
+</head>
+<body>
+<h1>Locations</h1>
+<table>
+    <thead>
+      <tr>
+	      <th data-field="warehouseName">Name</th>
+	      <th data-field="rowNumber">Row No.</th>
+	      <th data-field="binLabel">Bin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="location : ${locations}">
+         <td th:text="${location.warehouseName}">Name</td>
+         <td th:text="${location.rowNumber}">Row No.</td>
+         <td th:text="${location.binLabel}">Bin</td>
+      </tr>
+    </tbody>
+</table>
+</body>
+</html>

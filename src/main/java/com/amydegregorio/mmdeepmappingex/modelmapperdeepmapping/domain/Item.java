@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  * A persisted Item.
@@ -26,7 +26,7 @@ public class Item {
    private String name;
    private String description;
    private Integer quantity;
-   @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+   @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
    @JoinColumn(name="location_id", nullable=true)
    private Location location;
    
